@@ -1,6 +1,7 @@
 import { 
     signInWithEmailAndPassword ,
     createUserWithEmailAndPassword,
+    changepasswordwithEmailAndPassword,
     GoogleAuthProvider,
     signInWithPopup,
     signOut
@@ -24,7 +25,15 @@ export const RegisterAPI = (email, password) => {
       return err;
     }
   };
-  
+  export const ChangepasswordAPI=(currentPassword, newPassword, confirmPassowrd)=>{
+    try{
+      let response= changepasswordwithEmailAndPassword(auth,email,password,currentPassword,newPassword,confirmPassowrd);
+      return response;
+
+    }catch(err){
+      return err;
+    }
+  }
   export const GoogleSignInAPI = () => {
     try {
       let googleProvider = new GoogleAuthProvider();
